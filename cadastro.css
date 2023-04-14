@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:fantasy
+
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "h h"
+    "m a";
+}
+header{
+    grid-area: h;
+    background-color: black;
+    height: 50px;
+}
+main{
+    grid-area: m;
+}
+article{
+    grid-area: a;
+}
+main>img{
+    height: 900px
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+
+.icon{
+    
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+
+form > label{
+    margin: 10px 0;
+    justify-content: left;
+}
+form > input  {
+    font-size: 1.5rem
+}
+.form h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 90px;
+}
+input{
+    border-radius: 10px;
+    background-color: rgba(165, 165, 165, 0.55);
+    height: 40px;
+}
+@media screen and (max-width:800px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "h"
+        "m"
+        "a";
+    }
+    main>img{
+        height: 425px
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+    }
+    form > label{
+        margin: 5px 0;
+        justify-content: left;
+    }
+    form > input  {
+        font-size: 1rem;
+        
+    }
+    
+}

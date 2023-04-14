@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "h"
+    "m"
+    "a";
+}
+form{
+    grid-area: m;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "e d";
+
+}
+
+header{
+    grid-area:h;
+    background-color: black;
+    height: 45px;
+}
+main{
+             
+    grid-area:e;
+    display: flex;
+    flex-direction: column;
+    justify-content:right;
+    align-items: flex-start;
+    gap: 30px;
+}
+aside{
+    grid-area:d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 100px;
+}
+input{
+    border-radius: 10px;
+    background-color: rgba(165, 165, 165, 0.55);
+    height: 30px;
+}
+form > input  {
+    font-size: 1.5rem
+}
+@media screen and (max-width:800px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "h"
+        "m";
+    }
+    form{
+        grid-area: m;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "e"
+        "d" 
+    
+    }
+    aside> label{
+        margin-top: 40px;
+
+    }
+    
+
+}
