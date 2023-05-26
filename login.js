@@ -6,6 +6,7 @@ const senha = document.getElementById("senha");
 botao.onclick = (evt)=>{
     let dados = JSON.parse(localStorage.getItem("bd"));
     let logado;
+    if (dados != null){
     dados.forEach((elemento) => {
         if(elemento.emailcliente == email.value && elemento.senhacliente == senha.value){
             msg.innerHTML = "Aguarde redirecionando..."
@@ -22,4 +23,7 @@ botao.onclick = (evt)=>{
             return null;
         }
     });
+}else{
+    msg.innerHTML = "Não há nenhum usuário cadastrado"
+}
 }

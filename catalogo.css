@@ -19,28 +19,13 @@ header{
     height: 55px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center
 }
 
-main{
-    grid-area:m;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-}
-main>img {
-    height: 250px;
-}
-main >img{
-    margin: 70px 0;
-}
 input{
     border-radius: 10px;
     height: 30px;
-    background-color: white;
+    background-color: white
    
 }
 header> input{
@@ -55,42 +40,6 @@ a{
     width: 200px;   
     margin-left: 540px;
     display: flex;
-    justify-content: center;
+    justify-content: center 
 
 }
-
-@media screen and (max-width:800px){
-    .container{
-        display:grid;
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-areas: 
-        "h"
-        "m" 
-    }
-    main >img{
-        margin: 5px 0;
-    }
-    header{
-        grid-area: h;
-        background-color: black;
-        height: 55px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    main{
-        grid-area:m;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    a{
-        border: 2px solid black ;
-        padding: 10px 5px;
-        border-radius: 42px;
-        color: black;       
-        margin: 90px;
-    }
