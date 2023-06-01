@@ -5,6 +5,9 @@ const descricao = document.getElementById("descricao");
 const foto = document.getElementById("foto");
 
 
+var emaillogado;
+
+
 carregarCatalogo();
 function carregarCatalogo(){
     let dados = JSON.parse(localStorage.getItem("catalogo"));
@@ -16,6 +19,7 @@ function carregarCatalogo(){
     }
 
     dados.forEach((elemento, indice) => {
+        if(elemento.email == emaillogado){
         let divcard = document.createElement("div");
         divcard.setAttribute("class", "card")
         divcard.innerHTML = `<img src="img/${elemento.foto}"> 
@@ -24,10 +28,10 @@ function carregarCatalogo(){
         <a onclick="excluir(${indice})">excluir</a></div>
         </div>`;
         
-        cards.appendChild(divcard);
+        cards.appendChild(divcard);}
         
     });
-}
+}                                                                                                                   
 
 function excluir(indice){
     let dados = JSON.parse(localStorage.getItem("catalogo"));
@@ -43,4 +47,13 @@ function excluir(indice){
 function editar(indice){
     var url ="titulo.html?peditar=true&indice="+ encodeURIComponent(indice);
     window.location.href = url;
+}
+
+function femailLogado(){
+    let dados =sessionStorage.getItem("logado");
+    if (dados == null){
+        window.location.assign("login.html")
+    } else{
+        emaillogado = dados;
+    }
 }

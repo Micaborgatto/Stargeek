@@ -10,6 +10,7 @@ botao.onclick = (evt)=>{
     dados.forEach((elemento) => {
         if(elemento.emailcliente == email.value && elemento.senhacliente == senha.value){
             msg.innerHTML = "Aguarde redirecionando..."
+            sessionStorage.setItem("logado", email.value);
             setTimeout(()=>{
                 window.location.assign("catalogo.html");
             }, 2000);

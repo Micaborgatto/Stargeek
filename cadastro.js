@@ -62,12 +62,3 @@ function criarUsuario(evento){
       
 }
 
-function salvaEdicao(photo){
-    let dados = JSON.parse(localStorage.getItem("catalogo"));
-    dados[pindice].nome = nome.value;
-    dados[pindice].descricao = descricao.value;
-    dados[pindice].foto = photo;
-    dados[pindice].email = emaillogado;
-    localStorage.setItem("catalogo", JSON.stringify(dados));
-
-}

@@ -2,6 +2,9 @@ const nome = document.getElementById("nome");
 const descricao = document.getElementById("descricao");
 const botao = document.querySelector("#btn");
 
+var emaillogado;
+
+
 var url = new URL(window.location.href);
 var peditar = url.searchParams.get("peditar");
 var pindice = url.searchParams.get("indice");
@@ -13,8 +16,6 @@ if (peditar == "true"){
 botao.onclick = (evento) => {
 
     if ((peditar != "true") || (peditar == null)){
-
-        
     evento.preventDefault();
     fenvio()
     .then(result =>{
@@ -24,7 +25,8 @@ dados.push(
     {
         nome : nome.value,
         descricao : descricao.value,
-        foto : nomeArq
+        foto : nomeArq,
+        email: emaillogado
     }
     )
     localStorage.setItem("catalogo", JSON.stringify(dados));
@@ -37,8 +39,8 @@ dados.push(
     });  
 
     }else{
-        editarenvio(envio);
-        window.location.assign("catalogo.html");
+        editarenvio(evento);
+       
     }
 
 }
@@ -46,11 +48,10 @@ dados.push(
 function editar(indice){
     nome.value = "";
     descricao.value = "";
-    foto.files[0] = null;
     let dados = JSON.parse(localStorage.getItem("catalogo"));
     nome.value = dados[indice].nome;
     descricao.value = dados[indice].descricao;
-    fotoa.value = dados[indice].foto;
+    fotoa = dados[indice].foto;
 }
 
 var fotoa;
@@ -73,7 +74,10 @@ function salvaEdicao(pfoto){
     let dados = JSON.parse(localStorage.getItem("catalogo"));
     dados[pindice].nome = nome.value;
     dados[pindice].descricao = descricao.value;
-    dados[pindice].foto = foto.value;
+    dados[pindice].foto = pfoto;
+    dados[pindice].email = emaillogado;
+    localStorage.setItem("catalogo", JSON.stringify(dados));
+    window.location.assign("catalogo.html");
 }
 
 
@@ -105,4 +109,13 @@ async function fenvio() {
         return false;
     }
 
+}
+
+function femailLogado(){
+    let dados =(sessionStorage.getItem("logado"));
+    if (dados == null){
+        window.location.assign("login.html")
+    } else{
+        emaillogado = dados;
+    }
 }
