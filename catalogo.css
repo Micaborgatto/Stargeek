@@ -32,14 +32,76 @@ header> input{
     font-size: 1rem;
 }
 
-a{
+
+
+.cards{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.cards{
+    column-gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.card{
+    width: 20%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.cardimg img{
+    width: 100%;
+    height: 100%;
+    background-color: #D9D9D9;
+    border-radius: 30px;
+}
+
+.cardbtn{
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.cardbtn > a {
+    font-size: 1.2rem;
+    padding-left: 20px;
+    padding-top: 20px;
     border: 2px solid black ;
     padding: 10px 5px;
     border-radius: 42px;
     color: black;
-    width: 200px;   
-    margin-left: 540px;
-    display: flex;
-    justify-content: center 
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
 
+main > a {
+    border: 2px solid black ;
+    padding: 10px 5px;
+    border-radius: 42px;
+    color: black;
+    
+}
+
+main {
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.cardnome{
+    height: 10%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.carddescricao{
+    font-size: 0.8rem;
 }

@@ -22,9 +22,10 @@ function carregarCatalogo(){
         if(elemento.email == emaillogado){
         let divcard = document.createElement("div");
         divcard.setAttribute("class", "card")
-        divcard.innerHTML = `<img src="img/${elemento.foto}"> 
-        <div class="nome">${elemento.nome}</div>
-        <div class="info"><a onclick="editar(${indice})">editar</a>
+        divcard.innerHTML = `<div class= "cardimg"><img src="img/${elemento.foto}"><div>
+        <div class="cardnome">${elemento.nome}</div>
+        <div class="carddescricao">${elemento.descricao}</div>
+        <div class="cardbtn"><a onclick="editar(${indice})">editar</a>
         <a onclick="excluir(${indice})">excluir</a></div>
         </div>`;
         
